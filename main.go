@@ -5,11 +5,11 @@ import "fmt"
 // import "fmt"
 
 func main(){
-	mainStr := "God morning is a Good Morning"
+	mainStr := "A God morning is a Good Morning"
 
 
 	s1 := [] string {}
-	s2 := "God"
+	s2 := "Good"
 
 	resString := ""
 
@@ -63,7 +63,10 @@ func main(){
 		}
 	}
 
+	fmt.Println(intArr)
+
 	for i:=0; i < len(intArr);i++{
+		// fmt.Println("Here")
 		s1[intArr[i]] = "\033[34m"+s1[intArr[i]]+"\033[0m"
 	}
 

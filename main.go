@@ -2,13 +2,10 @@ package main
 
 import "fmt"
 
-// import "fmt"
 
 func FindSubString(mainString, subString string) {
-	// mainString := "A God morning is A Good God glory Morning Good"
-
 	s1 := []string{}
-	// subString := "Good"
+
 
 	resString := ""
 
@@ -38,7 +35,7 @@ func FindSubString(mainString, subString string) {
 
 				indexDiff := currIndex - prevIndex
 
-				fmt.Println(currIndex, indexDiff, string(subString[j]))
+				// fmt.Println(currIndex, indexDiff, string(subString[j]))
 
 				j++
 
@@ -64,7 +61,11 @@ func FindSubString(mainString, subString string) {
 		}
 	}
 
-	fmt.Println(intArrArr)
+	// fmt.Println(intArrArr)
+	if len(intArrArr) < 1{
+		fmt.Println("$"+subString+"$ is not present in $"+mainString+"$")
+		return
+	}
 
 	for _, ch := range intArrArr {
 		for i := 0; i < len(ch); i++ {
@@ -86,7 +87,9 @@ func FindSubString(mainString, subString string) {
 }
 
 func main() {
-	FindSubString()
+	mainString := "A God morning is A Good God glory Morning Good"
+	subString := "fire"
+	FindSubString(mainString, subString)
 }
 
 // if indexDiff == 1{

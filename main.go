@@ -5,17 +5,19 @@ import "fmt"
 // import "fmt"
 
 func main(){
-	mainStr := "A God morning is a Good Morning"
+	mainStr := "A God morning is a Good God glory Morning"
 
 
 	s1 := [] string {}
-	s2 := "Good"
+	s2 := "God"
 
 	resString := ""
 
 
 
 	intArr := []int{}
+
+	intArrArr := [][]int{}
 
 
 	for i:=0; i<len(mainStr);i++{
@@ -44,6 +46,8 @@ func main(){
 				fmt.Println(currIndex, indexDiff, string(s2[j]))
 			
 				j++
+				
+				
 
 				if indexDiff > 1{
 					j = 0
@@ -51,6 +55,11 @@ func main(){
 				}
 
 				
+			}
+			// fmt.Println(j)
+
+			if j == len(s2){
+				intArrArr = append(intArrArr, intArr)
 			}
 
 			i++
@@ -63,12 +72,20 @@ func main(){
 		}
 	}
 
-	fmt.Println(intArr)
+	fmt.Println(intArrArr)
 
-	for i:=0; i < len(intArr);i++{
-		// fmt.Println("Here")
-		s1[intArr[i]] = "\033[34m"+s1[intArr[i]]+"\033[0m"
+
+	for _,ch := range intArrArr{
+		for i:=0; i < len(ch);i++{
+			fmt.Println("Here")
+		s1[ch[i]] = "\033[34m"+s1[ch[i]]+"\033[0m"
 	}
+	}
+
+	// for i:=0; i < len(intArr);i++{
+	// 	// fmt.Println("Here")
+	// 	s1[intArr[i]] = "\033[34m"+s1[intArr[i]]+"\033[0m"
+	// }
 
 	for i:=0; i<len(s1);i++{
 		resString += s1[i]

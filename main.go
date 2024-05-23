@@ -29,29 +29,18 @@ func main(){
 
 				indexDiff := currIndex - prevIndex
 
-				// fmt.Println(currIndex, prevIndex, string(s2[j]))
-
-				if indexDiff == 1{
-					fmt.Println(currIndex, prevIndex, string(s2[j]))
-				}
-				if indexDiff > 1{
-					intArr = []int{}
-				}
-
-				// fmt.Println(currIndex, prevIndex, string(s2[j]))
+				fmt.Println(currIndex, indexDiff, string(s2[j]))
+			
 				j++
-				if j == len(s2) && len(intArr) != len(s2){
-					fmt.Println("Here")
+				
+				if indexDiff > 1{
 					j = 0
 					intArr = []int{}
 				}
+
 				
 			}
-			
-			// if j == len(s2) - 1{
-			// 	fmt.Println("Here")
-			// 	j = 0
-			// }
+
 			i++
 
 
@@ -62,5 +51,18 @@ func main(){
 		}
 	}
 
+	fmt.Println(intArr)
+
 	
 }
+
+
+
+
+// if indexDiff == 1{
+// 	// 	// fmt.Println(currIndex, prevIndex, string(s2[j]))
+// 	// }
+// 	// if indexDiff > 1{
+// 	// 	intArr = []int{}
+// 	// 	j = 0
+// 	// }

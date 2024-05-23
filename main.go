@@ -5,17 +5,29 @@ import "fmt"
 // import "fmt"
 
 func main(){
-	s1 := "A God morning is a Good Morning"
-	s2 := "Good"
+	mainStr := "God morning is a Good Morning"
+
+
+	s1 := [] string {}
+	s2 := "God"
+
+	resString := ""
+
+
 
 	intArr := []int{}
+
+
+	for i:=0; i<len(mainStr);i++{
+		s1 = append(s1, string(mainStr[i]))
+	}
 
 	// res := ""
 
 	
 	for i:=0; i < len(s1);{
 		for j:=0; j<len(s2);{
-			if s2[j] == s1[i]{
+			if string(s2[j]) == s1[i]{
 				intArr = append(intArr, i)
 
 				//indexes
@@ -32,7 +44,7 @@ func main(){
 				fmt.Println(currIndex, indexDiff, string(s2[j]))
 			
 				j++
-				
+
 				if indexDiff > 1{
 					j = 0
 					intArr = []int{}
@@ -51,7 +63,15 @@ func main(){
 		}
 	}
 
-	fmt.Println(intArr)
+	for i:=0; i < len(intArr);i++{
+		s1[intArr[i]] = "\033[34m"+s1[intArr[i]]+"\033[0m"
+	}
+
+	for i:=0; i<len(s1);i++{
+		resString += s1[i]
+	}
+
+	fmt.Println(resString)
 
 	
 }

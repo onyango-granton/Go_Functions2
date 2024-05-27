@@ -20,10 +20,20 @@ func main() {
 		for j:=0; j<len(subString);{
 			if mainString[i] == subString[j]{
 				indexArr = append(indexArr, i)
+				j++
 			}
-			j++
+			i++
+
+			if i == len(mainString){
+				break
+			}
+			
 		}
-		i++
+		// i++
+	}
+
+	for i:=0; i < len(indexArr);i++{
+		fmt.Print(string(mainString[indexArr[i]]))
 	}
 
 	fmt.Println(indexArr)

@@ -38,3 +38,20 @@ func main() {
 
 	fmt.Println(indexArr)
 }
+
+
+func isDuplicate(s1, s2 string) bool {
+	count := 0
+	for i:=0; i < len(s1);{
+		for j:=i; j < len(s2);{
+			if s1[i] == s2[j]{
+				count ++
+				i++
+			}
+		}
+	}
+	if count == len(s1) && count == len(s2){
+		return true
+	}
+	return false
+}

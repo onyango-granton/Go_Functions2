@@ -65,6 +65,19 @@ func isDuplicate(s1, s2 string) bool {
 }
 
 
+func findArr(mainString, subString string) []int {
+	res := []int{}
+	for i:=0; i<len(mainString);i++{
+		if  i+len(subString) < len(mainString) && isDuplicate(subString, mainString[i:i+len(subString)]){
+			for j:=i ; j < i+len(subString);j++{
+				res = append(res, j)
+			}
+		}
+	}
+	return res
+}
+
+
 func main() {
 	mainString := "Hello I like mellow"
 	subString := "el"

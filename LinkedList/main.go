@@ -1,49 +1,44 @@
 package main
 
-import "fmt"
-
+import (
+	"fmt"
+)
 
 type Node struct{
 	data int
-	next *Node
+	nextNode *Node
 }
 
-type LinkedList struct{
+type linkedList struct{
 	head *Node
-	length int
 }
 
-
-func (l *LinkedList) addNode(num int){
+func (l *linkedList) addNode(num int){
 	newNode := Node{data: num}
-	if l.head == nil {
+	if l.head == nil{
 		l.head = &newNode
 	} else {
 		currentNode := l.head
-		for currentNode.next != nil{
-			currentNode = currentNode.next
-		}
-		currentNode.next = &newNode
-	}
-	l.length ++
-}
-
-func (l *LinkedList) Display(){
-	current := l.head
-	for i:=0; i<l.length;i++{
-		fmt.Println(current.data)
-		current = current.next
+		l.head = &newNode
+		l.head.nextNode = currentNode
 	}
 }
 
+func (l *linkedList) display() {
+	currentNode := l.head
+	for currentNode != nil{
+		fmt.Println(currentNode.data)
+		currentNode = currentNode.nextNode
+	}
+}
 
-func main(){
-	list := LinkedList{}
-	list.addNode(4)
-	list.addNode(5)
-	list.addNode(6)
-	list.addNode(7)
+func main() {
+	linkList := linkedList{}
 
-	fmt.Println(list.head, list.length)
-	list.Display()
+	linkList.addNode(4)
+	linkList.addNode(5)
+	linkList.addNode(6)
+	linkList.addNode(10)
+
+	linkList.display()
 }

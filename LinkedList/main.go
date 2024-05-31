@@ -33,12 +33,12 @@ func (l *linkedList) display() {
 }
 
 func main() {
-	linkList := linkedList{}
+	linkListA := linkedList{}
 
-	linkList.addNode(4)
-	linkList.addNode(5)
-	linkList.addNode(6)
-	linkList.addNode(10)
+	linkListA.addNode(4)
+	linkListA.addNode(5)
+	linkListA.addNode(6)
+	linkListA.addNode(10)
 
-	linkList.display()
+	linkListA.display()
 }

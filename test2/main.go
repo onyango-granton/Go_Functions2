@@ -33,33 +33,32 @@ func (l *linkedList) display() {
 }
 
 func (l *linkedList) selfDel(num int) {
-		currentNodeAddr := l.headNodeAddress
-		for currentNodeAddr != nil{
-				//if currentNodeAddr.nextNodeAddr.nextNodeAddr.nextNodeAddr == nil{
-						if currentNodeAddr.nextNodeAddr.nextNodeAddr.data == num{
+	currentNodeAddr := l.headNodeAddress
+	for currentNodeAddr != nil {
+		//if currentNodeAddr.nextNodeAddr.nextNodeAddr.nextNodeAddr == nil{
+		if currentNodeAddr.nextNodeAddr.nextNodeAddr.data == num {
 
-						l.deleteTail()
-				
-						break
-				}
-				if currentNodeAddr.data == num{
-						currentNodeAddr.data = currentNodeAddr.nextNodeAddr.data
-						currentNodeAddr.nextNodeAddr = currentNodeAddr.nextNodeAddr.nextNodeAddr
-				}
-				currentNodeAddr = currentNodeAddr.nextNodeAddr
+			l.deleteTail()
+
+			break
 		}
+		if currentNodeAddr.data == num {
+			currentNodeAddr.data = currentNodeAddr.nextNodeAddr.data
+			currentNodeAddr.nextNodeAddr = currentNodeAddr.nextNodeAddr.nextNodeAddr
+		}
+		currentNodeAddr = currentNodeAddr.nextNodeAddr
+	}
 }
 
-
 func (l *linkedList) deleteTail() {
-		currentNode := l.headNodeAddress
-		for currentNode != nil{
-				if currentNode.nextNodeAddr.nextNodeAddr.nextNodeAddr == nil{
-						currentNode.nextNodeAddr.nextNodeAddr = nil
-						break
-				}
-				currentNode = currentNode.nextNodeAddr
+	currentNode := l.headNodeAddress
+	for currentNode != nil {
+		if currentNode.nextNodeAddr.nextNodeAddr.nextNodeAddr == nil {
+			currentNode.nextNodeAddr.nextNodeAddr = nil
+			break
 		}
+		currentNode = currentNode.nextNodeAddr
+	}
 }
 
 func main() {

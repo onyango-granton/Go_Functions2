@@ -55,6 +55,9 @@ func (l *linkedList) selfDel(num int) {
 	}
 }
 
+//Detailed commit message
+
+
 func (l *linkedList) deleteTail() {
 	currentNode := l.headNodeAddress
 	for currentNode != nil {

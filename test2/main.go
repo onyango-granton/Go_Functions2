@@ -43,6 +43,18 @@ func (l *linkedList) selfDel(num int) {
 		}
 }
 
+
+func (l *linkedList) deleteTail() {
+		currentNode := l.headNodeAddress
+		for currentNode != nil{
+				if currentNode.nextNodeAddr.nextNodeAddr.nextNodeAddr == nil{
+						currentNode.nextNodeAddr.nextNodeAddr = nil
+						break
+				}
+				currentNode = currentNode.nextNodeAddr
+		}
+}
+
 func main() {
 	listLink := &linkedList{}
 
@@ -50,8 +62,8 @@ func main() {
 	listLink.addNode(6)
 	listLink.addNode(10)
 	listLink.addNode(15)
-
+	listLink.deleteTail()
 	//fmt.Println(listLink.headNodeAddress.nextNodeAddr.nextNodeAddr.nextNodeAddr)
-	listLink.selfDel(5)
+	//listLink.selfDel(5)
 	listLink.display()
 }

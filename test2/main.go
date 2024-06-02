@@ -35,6 +35,13 @@ func (l *linkedList) display() {
 func (l *linkedList) selfDel(num int) {
 		currentNodeAddr := l.headNodeAddress
 		for currentNodeAddr != nil{
+				//if currentNodeAddr.nextNodeAddr.nextNodeAddr.nextNodeAddr == nil{
+						if currentNodeAddr.nextNodeAddr.nextNodeAddr.data == num{
+
+						l.deleteTail()
+				
+						break
+				}
 				if currentNodeAddr.data == num{
 						currentNodeAddr.data = currentNodeAddr.nextNodeAddr.data
 						currentNodeAddr.nextNodeAddr = currentNodeAddr.nextNodeAddr.nextNodeAddr
@@ -62,8 +69,8 @@ func main() {
 	listLink.addNode(6)
 	listLink.addNode(10)
 	listLink.addNode(15)
-	listLink.deleteTail()
+	//listLink.deleteTail()
 	//fmt.Println(listLink.headNodeAddress.nextNodeAddr.nextNodeAddr.nextNodeAddr)
-	//listLink.selfDel(5)
+	listLink.selfDel(5)
 	listLink.display()
 }

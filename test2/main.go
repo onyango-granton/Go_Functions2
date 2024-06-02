@@ -39,6 +39,8 @@ func main() {
 	listLink.addNode(6)
 	listLink.addNode(10)
 	listLink.addNode(15)
+	
+	fmt.Println(listLink.headNodeAddress.nextNodeAddr.nextNodeAddr.nextNodeAddr)
 
 	listLink.display()
 }
